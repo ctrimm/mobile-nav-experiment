@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+</head>
+<body>
+	<div class="blur-false"><!-- div used to blur all contents -->
+		
+	<!-- raf-header block -->
+	<div class="navbar navbar-fixed-top raf-header" role="navigation">
+		<div class="navbar-inner">
+			<div class="navbar-header">
+				<a class="dark" href="/">
+					<div class="navbar-logo pull-left">
+						<h1 class="sr-only">Andy Colwell-Photo Journalism & Photography</h1>
+						<div class="pull-left title"><span>Andy Colwell</span></div>
+					</div>
+				</a>
+				<div class="navbar-rightside pull-right visible-xs visible-sm">
+					<i class="fa fa-bars fa-lg"></i>	
+				</div>
+			</div>
+			<ul class="nav navbar-nav pull-right visible-md visible-lg">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</div>
+		<div class="navbar-bg light"></div>
+	</div>
+
+	</div><!-- blur div -->
+	
+	<div class="mobile-nav hidden-md hidden-lg hidden">
+		<div class="mobile-nav-rightside">
+			<i class="fa fa-lg fa-times"></i>	
+		</div>
+		
+		<div class="mobile-nav-content">
+			<ul class="">
+				<li class="active"><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="/contact">Contact</a></li>
+			</ul>
+		</div>
+	</div>
+	
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		var mobileNavBtn = $('.navbar-rightside');
+		var mobileNavCloseBtn = $('.mobile-nav-rightside');
+		var mobileNavContent = $('.mobile-nav');
+
+		mobileNavBtn.click(function() {
+			mobileNavBtn.toggleClass('hidden'); 	
+			mobileNavContent.toggleClass('hidden');	
+		});
+
+		mobileNavCloseBtn.click(function() {
+			mobileNavBtn.toggleClass('hidden'); 	
+			mobileNavContent.toggleClass('hidden');	
+		});
+	}); 	
+</script>
+
+</body>
+</html>

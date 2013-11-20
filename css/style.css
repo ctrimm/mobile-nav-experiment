@@ -1,0 +1,128 @@
+/*
+ *
+ * Site Wide Styles 
+ *
+ */
+
+.blur {
+	-webkit-filter: blur(2px);	
+	filter: blur(2px);	
+}
+
+/*
+ *
+ * Header 
+ *
+ */
+
+.raf-header {
+	height: 62px;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.raf-header > .navbar-inner {
+	z-index: 100;
+	position: relative;
+}
+
+.raf-header > .navbar-bg {
+	position: relative;
+	height: 62px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.raf-header > .navbar-bg.light {
+	background: #FFF;	
+}
+
+.raf-header > .navbar-bg.transparent {
+	opacity: .5;	
+}
+
+@media all and (max-width: 990px) and (min-width: 767px) {
+	.raf-header > .navbar-inner > .navbar-header {
+		float: none !important;	
+	}
+}
+
+.raf-header > .navbar-inner > .navbar-header > .navbar-rightside {
+	padding-right: 1em;
+	line-height: 62px;
+	width: 44px;
+	text-align: center;
+	z-index: 1000010;
+	position: absolute;
+	top:0;
+	right:0;
+}
+
+.raf-header > .navbar-inner > .navbar-header > a.dark {
+	color: #191919;
+}
+.raf-header > .navbar-inner > .navbar-header > a.dark:visited {
+	color: #191919;
+}
+
+.raf-header > .navbar-inner > .navbar-header .navbar-logo {
+	height: 62px;
+	overflow: hidden;	
+}
+
+.raf-header > .navbar-inner > .navbar-header .navbar-logo > .title {
+	line-height: 62px;
+	font-size: 1.4em;  
+	padding-left: 1em;
+	font-family: "freight-sans-pro", "Myriad Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+
+.raf-header > .navbar-inner > .navbar-nav > li a {
+	line-height: 62px;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/*
+ *
+ * Mobile Nav Container 
+ *
+ */
+
+.mobile-nav {
+	height: 100%;
+	width: 100%;
+	position: absolute; 
+	z-index: 1000000;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+	overflow: hidden;
+}
+
+.mobile-nav .mobile-nav-rightside {
+	padding-right: 1em;
+	line-height: 62px;
+	width: 44px;
+	text-align: center;
+	z-index: 1000010;
+	position: absolute;
+	top:0;
+	right:0;
+	color: #FFF;
+}
+
+.mobile-nav .mobile-nav-content {
+	overflow-y: scroll;
+	height: 100%;
+	width: 80%;
+	margin: 0 10%;
+}
+
+.mobile-nav .mobile-nav-content ul {
+	height: 101%;
+}
