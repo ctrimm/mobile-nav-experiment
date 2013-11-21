@@ -116,13 +116,25 @@
 	color: #FFF;
 }
 
-.mobile-nav .mobile-nav-content {
-	overflow-y: scroll;
-	height: 100%;
+#mobile-nav-content {
 	width: 80%;
+	position: absolute;
+	overflow: hidden;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	bottom: 0px;
 	margin: 0 10%;
 }
 
-.mobile-nav .mobile-nav-content ul {
-	height: 101%;
+#mobile-nav-content .scroller {
+
+}
+
+#mobile-nav-content .scroller ul {
+	list-style: none;
+	font-size: 40px;
+}
+#mobile-nav-content .scroller ul a {
+	color: #FFF;
 }
