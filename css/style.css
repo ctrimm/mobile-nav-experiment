@@ -4,10 +4,10 @@
  *
  */
 
-.blur {
-	-webkit-filter: blur(2px);	
-	filter: blur(2px);	
-}
+.blur-true {
+	/*-webkit-filter: blur(1px);	
+	filter: blur(1px);	
+*/}
 
 /*
  *
@@ -100,8 +100,42 @@
 	z-index: 1000000;
 	top: 0;
 	left: 0;
-	background: rgba(0,0,0,0.6);
 	overflow: hidden;
+	background: rgba(0,0,0,0.6);
+	opacity: 1;	
+	visibility: visible;
+	display: block !important;
+	
+	transition: opacity 0.4s ease-in-out;
+	-webkit-transition: opactiy 0.4s ease-in-out;
+	-moz-transition: opactiy 0.4s ease-in-out;
+	-ms-transition: opactiy 0.4s ease-in-out;
+	
+	
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	-o-perspective: 1000;
+	
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+	-ms-transform: translate3d(0,0,0);
+	-o-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+body {
+	background: purple;
+}
+
+.mobile-nav.hidden {
+	opacity: 0 !important;	
+	visibility: hidden !important;	
 }
 
 .mobile-nav .mobile-nav-rightside {
@@ -125,16 +159,51 @@
 	left: 0;
 	bottom: 0px;
 	margin: 0 10%;
+	display: block;
 }
 
 #mobile-nav-content .scroller {
-
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
 }
 
 #mobile-nav-content .scroller ul {
 	list-style: none;
 	font-size: 40px;
+	text-align: left;
+	font-family: 'EB Garamond', serif;
 }
+
+#mobile-nav-content .scroller ul li {
+	line-height: 40px;
+	padding: 0.13em 0;
+}
+
+#mobile-nav-content .scroller ul li.active {
+	list-style: disc;
+	color: #FFF;
+}
+#mobile-nav-content .scroller ul li.spacer {
+	visibility: hidden;
+}
+
 #mobile-nav-content .scroller ul a {
 	color: #FFF;
 }

@@ -5,11 +5,12 @@
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 </head>
 <body>
-	<div class="blur-false"><!-- div used to blur all contents -->
+	<div class="blurrable"><!-- div used to blur all contents -->
 		
 	<!-- raf-header block -->
 	<div class="navbar navbar-fixed-top raf-header" role="navigation">
@@ -34,9 +35,12 @@
 		<div class="navbar-bg light"></div>
 	</div>
 
+	<div style="width:100%; height:400px;background: red;"></div>
+	<div style="width:100%; height:400px;background: green;"></div>
+
 	</div><!-- blur div -->
 	
-	<div class="mobile-nav hidden-md hidden-lg hidden">
+	<div class="mobile-nav hidden">
 		<div class="mobile-nav-rightside">
 			<i class="fa fa-lg fa-times"></i>	
 		</div>
@@ -44,75 +48,19 @@
 		<div id="mobile-nav-content">
 			<div class="scroller">	
 				<ul>
-					<li><a href="/">Home</a></li>
+					<li class="spacer">Website Navigation</li>
+					<li ><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
+					<li><a href="/about">Conducting Business</a></li>
+					<li class="active"><a href="/contact">Contact</a></li>
+					<li ><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
+					<li><a href="/about">Conducting Business</a></li>
+					<li class="active"><a href="/contact">Contact</a></li>
+					<li ><a href="/">Home</a></li>
 					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
-					<li><a href="/about">About</a></li>
-					<li><a href="/contact">Contact</a></li>
+					<li><a href="/about">Conducting Business</a></li>
+					<li class="active"><a href="/contact">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -126,21 +74,21 @@
 		var mobileNavBtn = $('.navbar-rightside');
 		var mobileNavCloseBtn = $('.mobile-nav-rightside');
 		var mobileNavContent = $('.mobile-nav');
+		var blurContent = $('.blurrable');
 
 		mobileNavBtn.click(function() {
 			mobileNavBtn.toggleClass('hidden'); 	
 			mobileNavContent.toggleClass('hidden');	
+			blurContent.toggleClass('blur-true');	
 		});
 
 		mobileNavCloseBtn.click(function() {
 			mobileNavBtn.toggleClass('hidden'); 	
 			mobileNavContent.toggleClass('hidden');	
+			blurContent.toggleClass('blur-true');	
 		});
 		
-		var mobileNavScroll=new IScroll('#mobile-nav-content', {
-			mouseWheel: true,
-			click: true
-		}); 
+		var mobileNavScroll=new IScroll('#mobile-nav-content', {mouseWheel: true, click: true}); 
 		
 	}); 	
 </script>
