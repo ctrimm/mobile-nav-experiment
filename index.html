@@ -40,7 +40,7 @@
 
 	</div><!-- blur div -->
 	
-	<div class="mobile-nav hidden">
+	<div id="mobile-nav" class="mobile-nav hidden">
 		<div class="mobile-nav-rightside">
 			<i class="fa fa-lg fa-times"></i>	
 		</div>
@@ -68,6 +68,7 @@
 	
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/iscroll-min.js"></script>
+<script type="text/javascript" src="js/jquery.hammer.min.js"></script>
 
 <script type="text/javascript">
 	$(function() {
@@ -75,22 +76,43 @@
 		var mobileNavCloseBtn = $('.mobile-nav-rightside');
 		var mobileNavContent = $('.mobile-nav');
 		var blurContent = $('.blurrable');
+		var body = $('body');
 
+		var isDeviceMobile = function() {
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				var mobileCloseBtnHammer = mobileNavCloseBtn.hammer();
+
+				mobileCloseBtnHammer.on('tap', function(ev) {
+					mobileNavBtn.toggleClass('hidden'); 	
+					mobileNavContent.toggleClass('hidden');	
+					blurContent.toggleClass('blur-true');	
+					body.toggleClass('noScroll');	
+				});
+
+				document.getElementById('mobile-nav').addEventListener('touchstart', function(e){e.preventDefault();}, false);
+			} else {
+				console.log('this is a desktop');
+			}
+		};
 		mobileNavBtn.click(function() {
 			mobileNavBtn.toggleClass('hidden'); 	
 			mobileNavContent.toggleClass('hidden');	
 			blurContent.toggleClass('blur-true');	
+			body.toggleClass('noScroll');	
 		});
 
 		mobileNavCloseBtn.click(function() {
 			mobileNavBtn.toggleClass('hidden'); 	
 			mobileNavContent.toggleClass('hidden');	
 			blurContent.toggleClass('blur-true');	
+			body.toggleClass('noScroll');	
 		});
 		
 		var mobileNavScroll=new IScroll('#mobile-nav-content', {mouseWheel: true, click: true}); 
 		
-	}); 	
+		isDeviceMobile();
+
+	}); 
 </script>
 
 </body>
